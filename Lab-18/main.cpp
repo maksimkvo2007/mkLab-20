@@ -3,6 +3,8 @@
 #include <string>
 #include <iomanip>
 using namespace std;
+#include <cstdlib>
+#include <ctime>
 
 struct Node { //Node Struct
     double score;
@@ -148,5 +150,17 @@ int main (){
     movies[2].setName("Star Wars");
     movies[3].setName("Jurassic Park");
 
+    int lineIdx = 0;
+    for (int i = 0; i < 4; i++) { //movies
+        for (int j = 0; j < 3; j++) { //reviews 
+            //Random rating
+            double val = 1.0 + (rand() % 41) / 10.0; 
+            movies[i].addReview(val, lines[lineIdx]);
+            lineIdx++;
+        }
+    }
 
+    for (int i = 0; i < 4; i++) {
+        movies[i].print();
+    }
 }
