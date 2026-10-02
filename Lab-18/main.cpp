@@ -52,12 +52,34 @@ private:
         Node* curr = head;
         Node* otherCurr = other.head->next;
 
+        while (otherCurr != nullptr) {
+            curr->next = new Node;
+            curr->next->score = otherCurr->score;
+            curr->next->text = otherCurr->text;
+            curr->next->next = nullptr;
+            
+            curr = curr->next;
+            otherCurr = otherCurr->next;
+        }
+    }
 
+    Movie& operator=(const Movie& other) {
+        if (this == &other) {
+            return *this;
+        }
 
+        // Delete old
+        Node* curr = head;
+        while (curr != nullptr) {
+            Node* nextNode = curr->next;
+            delete curr;
+            curr = nextNode;
+        }
 
-
-
+        
+    }
 };
+
 
 int main (){
     string lines[12];
