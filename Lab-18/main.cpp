@@ -102,8 +102,35 @@ void addReview(double s, string t) {
         Node* newNode = new Node;
         newNode->score = s;
         newNode->text = t;
-        newNode->next = head; // Add to head[cite: 1]
+        newNode->next = head; // Add to head
         head = newNode;
+}
+
+void print() {
+    cout << "Movie Title: " << name << endl;
+        
+    Node* curr = head;
+    int num = 1;
+    double sum = 0;
+    int count = 0;
+
+        
+    while (curr != nullptr) {
+        cout << "  > Review #" << num << ": " 
+            << fixed << setprecision(1) << curr->score 
+            << ": " << curr->text << endl;
+            
+        sum += curr->score;
+        count++;
+        num++;
+        curr = curr->next;
+    }
+
+        
+    if (count > 0) { //Output
+        double avg = sum / count;
+        cout << "  > Average: " << fixed << setprecision(1) << avg << endl << endl;
+    }
 }
 
 int main (){
