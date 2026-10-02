@@ -95,11 +95,16 @@ private:
         }
 
         return *this;
-
-
     }
 };
 
+void addReview(double s, string t) {
+        Node* newNode = new Node;
+        newNode->score = s;
+        newNode->text = t;
+        newNode->next = head; // Add to head[cite: 1]
+        head = newNode;
+}
 
 int main (){
     string lines[12];
@@ -109,4 +114,12 @@ int main (){
         getline(inFile, lines[i]);
     }
     inFile.close();
+
+    Movie movies[4];
+    movies[0].setName("Lord of the Rings");
+    movies[1].setName("The Godfather");
+    movies[2].setName("Star Wars");
+    movies[3].setName("Jurassic Park");
+
+
 }
