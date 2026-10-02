@@ -98,14 +98,13 @@ private:
 
         return *this;
     }
-};
 
 void addReview(double s, string t) {
-        Node* newNode = new Node;
-        newNode->score = s;
-        newNode->text = t;
-        newNode->next = head; // Add to head
-        head = newNode;
+    Node* newNode = new Node;
+    newNode->score = s;
+    newNode->text = t;
+    newNode->next = head; // Add to head
+    head = newNode;
 }
 
 void print() {
@@ -119,8 +118,8 @@ void print() {
         
     while (curr != nullptr) {
         cout << "  > Review #" << num << ": " 
-            << fixed << setprecision(1) << curr->score 
-            << ": " << curr->text << endl;
+        << fixed << setprecision(1) << curr->score 
+        << ": " << curr->text << endl;
             
         sum += curr->score;
         count++;
@@ -133,8 +132,8 @@ void print() {
         double avg = sum / count;
         cout << "  > Average: " << fixed << setprecision(1) << avg << endl << endl;
     }
-}
-
+};
+};
 int main (){
     string lines[12];
 
