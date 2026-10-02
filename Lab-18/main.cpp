@@ -36,8 +36,21 @@ private:
         }
     }
 
+    Movie(const Movie& other) {
+        name = other.name;
+        head = nullptr;
+        
+        if (other.head == nullptr) {
+            return;
+        }
 
+        head = new Node;
+        head->score = other.head->score;
+        head->text = other.head->text;
+        head->next = nullptr;
 
+        Node* curr = head;
+        Node* otherCurr = other.head->next;
 
 
 
@@ -45,3 +58,7 @@ private:
 
 
 };
+
+int main (){
+    string lines[12];
+}
