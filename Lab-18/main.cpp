@@ -76,11 +76,37 @@ private:
             curr = nextNode;
         }
 
-        
+        head = new Node;
+        head->score = other.head->score;
+        head->text = other.head->text;
+        head->next = nullptr;
+
+        Node* myCurr = head;
+        Node* otherCurr = other.head->next;
+
+        while (otherCurr != nullptr) {
+            myCurr->next = new Node;
+            myCurr->next->score = otherCurr->score;
+            myCurr->next->text = otherCurr->text;
+            myCurr->next->next = nullptr;
+            
+            myCurr = myCurr->next;
+            otherCurr = otherCurr->next;
+        }
+
+        return *this;
+
+
     }
 };
 
 
 int main (){
     string lines[12];
+
+    ifstream inFile("Lab-18/input.txt");
+    for (int i = 0; i < 12; i++) {
+        getline(inFile, lines[i]);
+    }
+    inFile.close();
 }
