@@ -49,21 +49,28 @@ public:
     }
 
     void print() const {
-        cout << "CHAIR DATA:" << endl;
-        cout << "Legs: " << legs << endl;
-        cout << "Price history: ";
+        cout << legs << " legs, prices: ";
         for (int i = 0; i < SIZE; i++) {
             cout << "$" << fixed << setprecision(2) << prices[i] << " ";
         }
-        cout << endl;
-        cout << "Average: $" << getAveragePrice() << endl << endl;
+        cout << "| avg: $" << getAveragePrice() << endl;
     }
 
-}
+};
 
 int main(){
 
+    Chair c1;
+    c1.print();
 
+    double prices[SIZE] = {450.50, 425.00, 480.99};
+    Chair c2(4, prices);
+    c2.print();
+
+    Chair collection[3];
+    for (int i = 0; i < 3; i++) {
+        collection[i].print();
+    }
 
 
 }
