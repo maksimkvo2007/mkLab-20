@@ -48,11 +48,22 @@ public:
         return sum / SIZE;
     }
 
+    void print() const {
+        cout << "CHAIR DATA:" << endl;
+        cout << "Legs: " << legs << endl;
+        cout << "Price history: ";
+        for (int i = 0; i < SIZE; i++) {
+            cout << "$" << fixed << setprecision(2) << prices[i] << " ";
+        }
+        cout << endl;
+        cout << "Average: $" << getAveragePrice() << endl << endl;
+    }
+
 }
 
 int main(){
 
-    
+
 
 
 }
