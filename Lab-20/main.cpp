@@ -1,5 +1,7 @@
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 
@@ -60,14 +62,14 @@ public:
 
 int main(){
 
-    Chair c1;
+    Chair c1; //Default constructor
     c1.print();
 
-    double prices[SIZE] = {450.50, 425.00, 480.99};
+    double prices[SIZE] = {450.50, 425.00, 480.99};//Parameter constructor
     Chair c2(4, prices);
     c2.print();
 
-    Chair collection[3];
+    Chair collection[3]; //Array using default constructor
     for (int i = 0; i < 3; i++) {
         collection[i].print();
     }
